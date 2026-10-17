@@ -1,0 +1,98 @@
+```gitignore
+# ==============================
+# Python
+# ==============================
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# ==============================
+# Secrets and environment
+# ==============================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+credentials.json
+
+# ==============================
+# Data and source documents
+# ==============================
+data/
+datasets/
+raw_data/
+processed_data/
+
+# ==============================
+# Generated chunks and embeddings
+# ==============================
+chunks.jsonl
+embeddings.npy
+*.faiss
+*.index
+chunks_meta.pkl
+
+# Search indexes
+bm25_index/
+
+# ==============================
+# Models and large ML artifacts
+# ==============================
+models/
+model/
+checkpoints/
+weights/
+*.safetensors
+*.gguf
+*.onnx
+*.pt
+*.pth
+*.bin
+
+# ==============================
+# Logs and temporary files
+# ==============================
+*.log
+logs/
+tmp/
+temp/
+.cache/
+.ipynb_checkpoints/
+
+# ==============================
+# IDE and OS
+# ==============================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ==============================
+# Build artifacts
+# ==============================
+build/
+dist/
+*.egg-info/
+
+# ==============================
+# Git and local deployment overrides
+# ==============================
+.git/
+
+# Uncomment if these contain local-only configuration:
+# app-deploy/.env
+# docker-compose.override.yml
+```

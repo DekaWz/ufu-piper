@@ -1,0 +1,24 @@
+services:
+  vllm-embedding:
+    image: vllm/vllm-openai:latest
+    command: >
+      /models/qwen3-embed-4b-awq
+      --served-model-name Qwen/Qwen3-Embedding-4B
+      --runner pooling
+      --gpu-memory-utilization 0.85
+      --max-model-len 4096
+      --enforce-eager
+    ports:
+      - "8000:8000"
+    volumes:
+      - ~/pied-piper/models/qwen3-embed-4b-awq:/models/qwen3-embed-4b-awq 
+      - ~/pied-piper/adapters:/adapters
+    environment:
+      - HF_HUB_OFFLINE=1
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
