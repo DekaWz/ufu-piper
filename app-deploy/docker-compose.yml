@@ -5,7 +5,7 @@ services:
       dockerfile: app-deploy/Dockerfile
     container_name: pied_piper_app
     working_dir: /app
-    command: uvicorn api.main:app --host 0.0.0.0 --port 5000 --reload
+    command: uvicorn api.app:app --host 0.0.0.0 --port 5000
     volumes:
       - ../pied-piper-index.faiss:/app/pied-piper-index.faiss:ro
       - ../chunks_meta.pkl:/app/chunks_meta.pkl:ro

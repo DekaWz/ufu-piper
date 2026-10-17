@@ -95,4 +95,6 @@ dist/
 # Uncomment if these contain local-only configuration:
 # app-deploy/.env
 # docker-compose.override.yml
+
+*.whl
 ```

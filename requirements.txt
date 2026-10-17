@@ -1,3 +1,8 @@
-pypdfium==0.0.15
-pypdfium2==5.14.0
-uvicorn
+fastapi
+uvicorn[standard]
+pydantic
+numpy
+faiss-cpu
+requests
+bm25s
+tqdm

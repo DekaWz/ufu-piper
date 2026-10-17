@@ -1,47 +1,7 @@
-
-# Virtual environments
-.venv/
-venv/
-env/
-ENV/
-
-# Python caches and artifacts
-**/__pycache__/
-*.py[cod]
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-.coverage
-htmlcov/
-
-# Docker files
-Dockerfile
-docker-compose.yml
-.dockerignore
-**/Dockerfile
-**/docker-compose.yml
-
-# Deployment directories
-ai-deploy/
-app-deploy/
-
-# Tests
-tests/
-
-# Data and models
-data/
-models/
-bm25_index/
-without_lora/
-
-# Large generated artifacts
-chunks.jsonl
-chunks_meta.pkl
-embeddings.npy
-*.faiss
-
-# Logs
-*.log
-
-# Git
-.git/
+**
+!requirements.txt
+!src/
+!src/api/
+!src/api/**
+!src/templates/
+!src/templates/**
