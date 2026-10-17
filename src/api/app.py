@@ -6,8 +6,8 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
-from search_core import search, load_index
-
+from .search_core import search, load_index
+from .hs import hybrid_search
 BASE_DIR = Path(__file__).parent
 TEMPLATES_DIR = BASE_DIR.parent / "templates"
 
@@ -22,7 +22,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(title="Pied Piper Search", lifespan=lifespan)
+app = FastAPI(lifespan=lifespan)
 
 
 class SearchResult(BaseModel):
@@ -48,7 +48,8 @@ async def api_search(
     top_k: int = Query(5, ge=1, le=50),
 ):
     try:
-        results = search(q, top_k=top_k)
+        #results = search(q, top_k=top_k)
+        results = hybrid_search(q, top_k=top_k)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
     return {"query": q, "results": results}

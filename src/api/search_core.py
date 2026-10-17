@@ -5,7 +5,7 @@ import numpy as np
 import faiss
 import requests
 
-VLLM_URL = "http://localhost:8000/v1/embeddings"
+VLLM_URL = "http://vllm-embedding:8000/v1/embeddings"
 VLLM_MODEL = "Qwen/Qwen3-Embedding-4B"
 
 INDEX_PATH = "pied-piper-index.faiss"
