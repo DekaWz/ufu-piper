@@ -10,3 +10,5 @@ COPY src/api/ /app/api/
 COPY src/templates/ /app/templates/
 
 EXPOSE 5000
+
+CMD ["uvicorn", "api.app:app", "--host", "0.0.0.0", "--port", "5000"]
